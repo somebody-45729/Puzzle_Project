@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float movementSpeed = 5.0f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
