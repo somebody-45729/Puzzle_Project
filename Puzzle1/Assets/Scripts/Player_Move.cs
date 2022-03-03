@@ -20,25 +20,8 @@ public class Player_Move : MonoBehaviour
     {
        
     }
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "coin")
-        {
-            score += 1;
-
-            Destroy(col.gameObject);
-            addScore();
-
-        }
-    }
-    void addScore()
-    {
-        score++;
-        if (score == 5)
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
+    
+   
     void FixedUpdate()
     {
 
@@ -66,7 +49,24 @@ public class Player_Move : MonoBehaviour
         {
             playerRigidbody.velocity = Vector3.zero;
         }
+
+
+        if (collision.gameObject.tag == "Coin")
+        {
+            score += 1;
+
+            Destroy(collision.gameObject);
+            addScore();
+
+        }
     }
 
-    
+    void addScore()
+    {
+        score++;
+        if (score == 5)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
 }
