@@ -45,7 +45,7 @@ public class Player_Move : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Wall_byLength")
+        if (collision.gameObject.name == "Wall_byLength") // change this to tag version (easier)
         {
             playerRigidbody.velocity = Vector3.zero;
         }
