@@ -15,6 +15,30 @@ public class Player_Move : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
+    public int score;
+    void Update()
+    {
+       
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "coin")
+        {
+            score += 1;
+
+            Destroy(col.gameObject);
+            addScore();
+
+        }
+    }
+    void addScore()
+    {
+        score++;
+        if (score == 5)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
     void FixedUpdate()
     {
 
