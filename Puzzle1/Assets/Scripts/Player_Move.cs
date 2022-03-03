@@ -33,4 +33,12 @@ public class Player_Move : MonoBehaviour
             playerRigidbody.velocity = new Vector3(0, 0, -playerSpeed);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Wall_byLength")
+        {
+            playerRigidbody.velocity = Vector3.zero;
+        }
+    }
 }
