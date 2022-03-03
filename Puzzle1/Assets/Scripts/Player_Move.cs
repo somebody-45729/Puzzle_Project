@@ -4,10 +4,33 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-    public float movementSpeed = 5.0f;
+    public Rigidbody playerRigidbody;
 
-    void Update()
+    public int playerSpeed = 10;
+
+    void Start()
     {
-       
+        playerRigidbody = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            playerRigidbody.velocity = new Vector3(-playerSpeed, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            playerRigidbody.velocity = new Vector3(playerSpeed, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            playerRigidbody.velocity = new Vector3(0, 0, playerSpeed);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            playerRigidbody.velocity = new Vector3(0, 0, -playerSpeed);
+        }
     }
 }
