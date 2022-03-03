@@ -6,7 +6,7 @@ public class Coin_Collect : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player_Char")
+        if (other.tag == "Player")
         {
             Debug.Log("Coin Get!");
             Destroy(this.gameObject);
