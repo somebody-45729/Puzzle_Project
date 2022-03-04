@@ -144,3 +144,12 @@ Received Import Request.
 Start importing Assets/Scripts/Testing Scripts using Guid(0fa50889719ffb64c8e121847eb4fd84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3835918f58535123f5933f721b8400f5') in 0.006978 seconds 
   Import took 0.009276 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 48.642518 seconds.
+  path: Assets/Scripts/Player_Move.cs
+  artifactKey: Guid(5f19f864a29cdb44c93e2818f969402d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player_Move.cs using Guid(5f19f864a29cdb44c93e2818f969402d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04f49b8a8fed54259807804bb3b38026') in 0.006914 seconds 
+  Import took 0.009117 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
