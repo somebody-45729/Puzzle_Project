@@ -35,7 +35,7 @@ public class HUDCanvas : MonoBehaviour
     private void Start()
     {
         gm = GameManager.GM; //find the game manager
-
+        Debug.Log(gm);
         //reference to levle info
         level = gm.gameLevelsCount;
         totalLevels = gm.gameLevels.Length;

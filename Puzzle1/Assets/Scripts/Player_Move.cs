@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_Move : MonoBehaviour
 {
+
     public Rigidbody playerRigidbody;
 
     public int playerSpeed = 10;
@@ -15,16 +16,9 @@ public class Player_Move : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
-    public int score;
+    public static int score = 0;
     void Update()
     {
-       
-    }
-    
-   
-    void FixedUpdate()
-    {
-
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             playerRigidbody.velocity = new Vector3(-playerSpeed, 0, 0);
@@ -42,31 +36,42 @@ public class Player_Move : MonoBehaviour
             playerRigidbody.velocity = new Vector3(0, 0, -playerSpeed);
         }
     }
+    
+   
+    void FixedUpdate()
+    {
+
+       
+    }
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "Wall_byLength") // change this to tag version (easier)
         {
             playerRigidbody.velocity = Vector3.zero;
         }
 
 
-        if (collision.gameObject.tag == "Coin")
+      
+        /*if (collision.gameObject.tag == "Coin")
         {
             score += 1;
-
+            Debug.Log("Collecting Coin");
             Destroy(collision.gameObject);
             addScore();
 
-        }
+        }*/
     }
 
-    void addScore()
+    public static void addScore()
     {
+      
         score++;
+        Debug.Log("score");
         if (score == 5)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
