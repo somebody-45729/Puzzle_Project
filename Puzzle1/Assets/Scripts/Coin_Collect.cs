@@ -13,7 +13,7 @@ public class Coin_Collect : MonoBehaviour
             if (other.tag == "Player")
             {
                 Debug.Log("Coin Get!");
-                Player_Move.addScore();
+              //  Player_Move.addScore();
                 flag = false;
                 Destroy(this.gameObject);
 

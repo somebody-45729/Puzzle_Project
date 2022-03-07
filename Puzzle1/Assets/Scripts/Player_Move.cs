@@ -10,10 +10,12 @@ public class Player_Move : MonoBehaviour
     public Rigidbody playerRigidbody;
 
     public int playerSpeed = 10;
+    public GameManager gm;
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+        gm = GameManager.GM;
     }
 
     public static int score = 0;
@@ -64,14 +66,27 @@ public class Player_Move : MonoBehaviour
         }*/
     }
 
-    public static void addScore()
+    public void addScore()
     {
       
         score++;
         Debug.Log("score");
         if (score == 5)
         {
-            SceneManager.LoadScene(2);
+            score = 0;
+            gm.nextLevel = true;
+
         }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+            if (other.tag == "Coin")
+            {
+                Debug.Log("Coin Get!");
+            Destroy(other.gameObject);
+
+            addScore();
+
+            }
     }
 }
